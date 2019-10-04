@@ -1,0 +1,4 @@
+CommodityId,CommodityName,MallType,ItemId,ItemCount,CurrencyType,Price,LimitBuyType,LimitBuyTimes,LimitMinLevel,LimitMaxLevel,LimitVIP
+商品编号,商品名字,商城类型,道具Id,道具数量,货币类型,价格,限购类型,限购次数,限购等级下限,限购等级上限,限购VIP等级
+40100001,小山楂x1,1,30100001,1,1,20,1,,2,,
+40100002,小山楂x5,1,30100001,5,1,50,2,1,2,,

@@ -1,0 +1,6 @@
+ConfigDataName,FileName
+ROKConfig.ROKCsv.RoleCsvConfigData,Role
+ROKConfig.ROKCsv.EquipmentItemCsvConfigData,EquipmentItem
+ROKConfig.ROKCsv.GeneralItemCsvConfigData,GeneralItem
+ROKConfig.ROKCsv.ComposeCsvConfigData,Compose
+ROKConfig.ROKCsv.MallCommodityCsvConfigData,MallCommodity

@@ -1,0 +1,29 @@
+{
+	"GUIAssets":
+	[
+		{
+			"Id":"10110001",
+			"EnumName":"ROK_GUI_RoleMainView",
+			"Name":"UIRoleMainView",
+			"Path":"Prefabs/UIPrefabs/Role/UIRoleMainView.prefab",
+			"ABName":"gui"
+		},
+		{
+			"Id":"101",
+			"EnumName":"ROK_GUI_Cube",
+			"Name":"Cube",
+			"Path":"Assets/Prefabs/Cube.prefab",
+			"ABName":"geometry"
+		},
+		{			
+			"Id":"102",
+			"EnumName":"ROK_GUI_Sphere",
+			"Name":"Sphere",
+			"Path":"Assets/Prefabs/Sphere.prefab",
+			"ABName":"geometry"
+		}
+	],
+	
+	"CharacterAssets":
+	[]
+}
