@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ROKCore;
+using ROKCore.ROKAsset;
+using UnityEngine;
 
 namespace ROKGUI
 {
@@ -29,6 +31,27 @@ namespace ROKGUI
         UIEventSensor m_EventSensor = new UIEventSensor();
 
         public abstract EAssetID GetViewAssetId();
+
+        public virtual bool GenerateView()
+        {
+            EAssetID assetId = GetViewAssetId();
+            if (assetId != EAssetID.ROK_None)
+            {
+                GameObject go = null;
+                AssetManager.Instance.InstantiateWithAssetBundle((int)assetId, go);
+
+                if (go != null)
+                {
+                    BaseUIView view = go.GetComponent<BaseUIView>();
+                    if (view != null)
+                    {
+                        m_UINode = view;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
         public virtual void Init()
         {
@@ -138,7 +161,7 @@ namespace ROKGUI
             return null;
         }
 
-        public T ShowChildController<T>() where T:BaseUIController,new()
+        public T ShowChildController<T>() where T : BaseUIController, new()
         {
             return null;
         }

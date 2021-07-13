@@ -1,0 +1,47 @@
+ManifestFileVersion: 0
+CRC: 541743658
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 55761878f9c2e1eeebeadad6031f0665
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9eabacd878cf6d87ceb1f3620a01fad4
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 2109663825, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 174ea13ddecbf634e8b1b2fd9456f1bc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 22f7cfed22da779498519b337971c119, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/UIPrefab/Login/UILoginInputWindow.prefab
+- Assets/Prefabs/UIPrefab/Login/UILoginView.prefab
+Dependencies: []

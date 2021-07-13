@@ -19,6 +19,8 @@ namespace ROKCore
         Item,
         Mall,
 
+        Login = 21,
+
         Max = 9999,
     }
 }

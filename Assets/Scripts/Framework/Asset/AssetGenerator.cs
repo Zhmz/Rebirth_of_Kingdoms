@@ -32,12 +32,12 @@ namespace ROKCore.ROKAsset
             return null;
         }
 
-        public void InstantiateWithAssetBundle(int prefabId, Vector3 pos = default(Vector3))
+        public void InstantiateWithAssetBundle(int prefabId,GameObject go, Vector3 pos = default(Vector3))
         {
             ////异步加载
             //StartCoroutine(InstantiateObjectAsync(prefabId, pos));
             //同步加载
-            StartCoroutine(InstantiateObject(prefabId, pos));
+            StartCoroutine(InstantiateObject(prefabId,go, pos));
         }
 
         IEnumerator InstantiateObjectAsync(int prefabId, Vector3 pos = default(Vector3))
@@ -70,12 +70,12 @@ namespace ROKCore.ROKAsset
             }
         }
 
-        public IEnumerator InstantiateObject(int prefabId, Vector3 pos = default(Vector3))
+        public IEnumerator InstantiateObject(int prefabId,GameObject go, Vector3 pos = default(Vector3))
         {
             AssetGUIData item = GetAssetGUIDataItem(prefabId);
 
             string uri = "file:///" + Application.streamingAssetsPath + "/AssetBundles/" + item.ABName;
-            UnityEngine.Networking.UnityWebRequest request =  UnityWebRequestAssetBundle.GetAssetBundle(uri, 0);
+            UnityEngine.Networking.UnityWebRequest request = UnityWebRequestAssetBundle.GetAssetBundle(uri, 0);
             yield return request.SendWebRequest();
 
             if (request.isNetworkError)
@@ -94,7 +94,7 @@ namespace ROKCore.ROKAsset
                     if (bundle != null)
                     {
                         GameObject prefabAsset = bundle.LoadAsset<GameObject>(item.Name);
-                        GameObject.Instantiate(prefabAsset, pos, Quaternion.identity);
+                        go = GameObject.Instantiate(prefabAsset, pos, Quaternion.identity);
                         bundle.Unload(false);
                     }
                 }

@@ -2,6 +2,13 @@
 	"GUIAssets":
 	[
 		{
+			"Id":"20001000",
+			"EnumName":"ROK_LoginView",
+			"Name":"UILoginView",
+			"Path":"Prefabs/UIPrefabs/Login/UILoginView.prefab",
+			"ABName":"rok_other"
+		},
+		{
 			"Id":"10110001",
 			"EnumName":"ROK_GUI_RoleMainView",
 			"Name":"UIRoleMainView",

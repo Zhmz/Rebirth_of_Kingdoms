@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using ROKGUI;
+using System.Reflection;
+using ROKTool;
 
 namespace ROKCore.ROKAsset
 {
@@ -47,8 +50,8 @@ namespace ROKCore.ROKAsset
         {
             base.Init();
 
-            InstantiateWithAssetBundle(101, new Vector3(3, 0, 0));
-            InstantiateWithAssetBundle(102, new Vector3(-3, 0, 0));
+            //InstantiateWithAssetBundle(101, new Vector3(3, 0, 0));
+            //InstantiateWithAssetBundle(102, new Vector3(-3, 0, 0));
         }
 
         public override void ShutDown()
@@ -56,11 +59,12 @@ namespace ROKCore.ROKAsset
             base.ShutDown();
         }
 
-        public void InstantiateWithAssetBundle(int prefabId, Vector3 pos = default(Vector3))
+        public void InstantiateWithAssetBundle(int prefabId,GameObject go, Vector3 pos = default(Vector3))
         {
+            Debug.Log("1111");
             if (Generator != null)
             {
-                Generator.InstantiateWithAssetBundle(prefabId, pos);
+                Generator.InstantiateWithAssetBundle(prefabId,go, pos);
             }
         }
 
@@ -71,6 +75,42 @@ namespace ROKCore.ROKAsset
                 return Generator.InstantiateInEditor(prefabId, pos);
             }
             return null;
+        }
+
+
+        //实例化controller
+        public T InstantiateController<T>(int userContext = 0) where T:BaseUIController
+        {
+            T controller = null;
+
+            try
+            {
+                Type ctrlType = typeof(T);
+                object obj = Activator.CreateInstance(ctrlType);
+                controller = obj as T;
+
+                if (controller == null)
+                {
+                    ROKLogger.PrintError("Instantiate Controller {0} Failed.", ctrlType.FullName);
+                    return null;
+                }
+
+                if (controller.GenerateView())
+                {
+                    controller.Init();
+                }
+                else
+                {
+                    ROKLogger.PrintError("Instantiate View {0} Failed.", ctrlType.FullName);
+                }
+            }
+            catch
+            {
+                //发生异常，返回类型的默认值
+                return default(T);
+            }
+
+            return controller;
         }
     }
 }

@@ -1,7 +1,10 @@
 ManifestFileVersion: 0
-CRC: 514247430
+CRC: 3666145702
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: geometry
+      Dependencies: {}
+    Info_1:
+      Name: rok_other
       Dependencies: {}

@@ -22,7 +22,9 @@ namespace ROKCore
            
             {EModuleType.Role, typeof(ROKGameBase.ROKRole.RoleManager)},
             {EModuleType.Item, typeof(ROKGameBase.ROKItem.ItemManager)},
-            {EModuleType.Mall, typeof(ROKGameBase.ROKMall.MallManager)}
+            {EModuleType.Mall, typeof(ROKGameBase.ROKMall.MallManager)},
+
+            {EModuleType.Login, typeof(ROKGameBase.ROKLogin.LoginManager)}, 
         };
         #endregion
 
